@@ -49,8 +49,8 @@ public class Demo {
             }
         }
 
-        System.out.println(newCity + " has been successfully added as a new destination");
         stringListIterator.add(newCity);
+        System.out.println(newCity + " has been successfully added as a new destination");
         return true;
     }
 }
