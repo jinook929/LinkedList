@@ -22,6 +22,7 @@ public class Main {
         }
 
         intList.add(1, 2);
+        intList.add(4, 5);
 
         for(int i = 0; i < intList.size(); i++) {
             System.out.println(i + " : " + intList.get(i));
