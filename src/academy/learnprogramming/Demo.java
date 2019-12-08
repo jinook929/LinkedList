@@ -7,18 +7,23 @@ import java.util.ListIterator;
 public class Demo {
     public static void main(String[] args) {
         LinkedList<String> placesToVisit = new LinkedList<>();
-        placesToVisit.add("Sydney");
-        placesToVisit.add("Melbourne");
-        placesToVisit.add("Brisbane");
-        placesToVisit.add("Perth");
-        placesToVisit.add("Canberra");
-        placesToVisit.add("Adelaide");
-        placesToVisit.add("Darwin");
-
+        addInOrder(placesToVisit, "Sydney");
+        addInOrder(placesToVisit, "Melbourne");
+        addInOrder(placesToVisit, "Brisbane");
+        addInOrder(placesToVisit, "Perth");
+//        placesToVisit.add("Sydney");
+//        placesToVisit.add("Melbourne");
+//        placesToVisit.add("Brisbane");
+//        placesToVisit.add("Perth");
+//        placesToVisit.add("Canberra");
+//        placesToVisit.add("Adelaide");
+//        placesToVisit.add("Darwin");
         printList(placesToVisit);
 
-        placesToVisit.add(1, "Alice Springs");
+        addInOrder(placesToVisit, "Alice Springs");
+//        placesToVisit.add(1, "Alice Springs");
         printList(placesToVisit);
+        addInOrder(placesToVisit, "Alice Springs");
 
         placesToVisit.remove(4);
         printList(placesToVisit);
@@ -39,9 +44,11 @@ public class Demo {
         while(stringListIterator.hasNext()) {
             int comparison = stringListIterator.next().compareTo(newCity);
             if(comparison == 0) {
+                // equal, do not add
                 System.out.println(newCity + " is already included as a destination");
                 return false;
             } else if(comparison > 0) {
+                // newCicy should appear before this one
                 stringListIterator.previous();
                 stringListIterator.add(newCity);
                 System.out.println(newCity + " has been successfully added as a new destination");
