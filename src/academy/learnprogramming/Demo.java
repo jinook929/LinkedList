@@ -73,7 +73,8 @@ public class Demo {
             System.out.println("No cities in the itinerary");
             return;
         } else {
-            System.out.println("Now visiting " + listIterator.next());
+//            System.out.println("Now visiting " + listIterator.next());
+            System.out.println("Let's begin our journey!");
             printMenu();
         }
 
@@ -115,6 +116,9 @@ public class Demo {
                     }
                     break;
                 case 3:
+                    System.out.println(cities.toString());;
+                    break;
+                case 4:
                     printMenu();
                     break;
             }
@@ -127,6 +131,7 @@ public class Demo {
                 "0 - to quit\n" +
                 "1 - go to next city\n" +
                 "2 - go to previous city\n" +
-                "3 - print menu options");
+                "3 - print cities in the itinerary\n" +
+                "4 - print menu options");
     }
 }
